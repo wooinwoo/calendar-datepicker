@@ -1,0 +1,20 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Open Sans';
+  font-weight: 300;
+}
+
+
+.calendar {
+  --calendar-size: 300px;
+  padding: 0 20px;
+  margin: 0px auto;
+}
+.calendar .title {
+  color: #db5b33;
+  font-weight: 300;
+}

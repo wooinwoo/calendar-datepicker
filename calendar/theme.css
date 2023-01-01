@@ -1,0 +1,104 @@
+
+.title{
+  font-size: calc(var(--calendar-size) / 10);
+  margin: 0 0 10px 0;
+}
+ .calendar {
+  --main-color: #F0F2F2;
+  --cal_nav-color: #00cc66;
+  --dayOff-color : #ff0000;
+  --disable-color: #a7a7a7;
+  --color-white : #fff;
+  --color-blue : #0080ff;
+  --color-black : #000;
+
+  width: var(--calendar-size);
+  height: calc(var(--calendar-size) * 1.5);
+  background-color: var(--main-color);
+}
+
+
+.cal-toggle{
+  display: flex;
+  align-items: center;
+  width: calc(var(--calendar-size) / 2);
+  height: calc(var(--calendar-size) / 10);
+  font-size: calc(var(--calendar-size) / 25);
+  background-color: var(--color-white);
+  color: var(--disable-color);
+  border: 1px solid var(--disable-color);
+  border-radius: 2px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.cal-toggle.focused:hover{
+  border: 2px solid var(--color-blue);
+}
+.cal-toggle.pick{
+  font-weight: 500;
+  color: var(--color-black);
+}
+.cal-wrap.disable{
+  display: none;
+}
+.cal-wrap{
+  box-shadow:0 5px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+}
+
+
+.cal_nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-size: calc(var(--calendar-size) / 20);
+  color: var(--color-white);
+  background-color: var(--cal_nav-color);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 0 20px;
+}
+
+
+
+
+
+
+.days{
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  padding-top: 15px;
+  background-color: var(--color-white);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.days .day{
+  box-sizing: content-box;
+  text-align: center;
+  font-size: calc(var(--calendar-size) / 25);
+  width: 100%;
+  height: 0;
+  padding-top:25%;
+  padding-bottom: 75%;
+}
+.days .day.current:hover,
+.days .day.pick{
+  color: #fff;
+  border-radius: 50%;
+  background-color: var(--cal_nav-color);
+}
+.days .day.today{
+  border-radius: 50%;
+  border: 2px solid var(--cal_nav-color)
+}
+
+
+.days .day:nth-child(7n + 1){
+  color: var(--dayOff-color)
+}
+.days .day.disable{
+  color: var(--disable-color)
+}
